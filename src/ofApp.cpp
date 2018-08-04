@@ -104,18 +104,26 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+void ofApp::dragEvent(ofDragInfo dragInfo){
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::onTextInputEvent(ofxDatGuiTextInputEvent event){
-    
+    username_attempt = text_input_user->getText();
+    password_attempt = text_input_password->getText();
 }
 
 //--------------------------------------------------------------
 void ofApp::onButtonEvent(ofxDatGuiButtonEvent event){
-    
+    if (signInCorrect(username_attempt, password_attempt)) {
+        sign_in_should_be_onscreen = false;
+    }
+}
+
+//--------------------------------------------------------------
+bool ofApp::signInCorrect(std::string username, std::string password){
+    return true;
 }
 
 // This function adapted from Huu Nguyen in his talk

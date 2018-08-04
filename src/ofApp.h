@@ -45,5 +45,5 @@ public:
     void onButtonEvent(ofxDatGuiButtonEvent event);
     
     //Check if the sign in is correct.
-    bool signInEvent(std::string username, std::string password);
+    bool signInCorrect(std::string username, std::string password);
 };
