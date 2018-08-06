@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxDatGui.h"
+#include "stdio.h"
+#include "sqlite3.h"
 
 // Write function for the libcurl API request declaration.
 size_t writeFunction(void *ptr, size_t size, size_t nmemb, std::string* data);

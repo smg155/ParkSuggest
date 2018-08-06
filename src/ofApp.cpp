@@ -35,6 +35,20 @@ void ofApp::setup(){
     // General class variable setup.
     font.load("ofxbraitsch/fonts/Verdana.ttf", 24);
     sign_in_should_be_onscreen = true;
+    
+    // Database setup (SRC: "http://quantlabs.net/blog/2016/01/working-demo-sqlite-with-c-on-mac-osx-xcode/")
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    int request;
+    request = sqlite3_open("LoginDB.db", &db);
+    
+    if(request){
+        fprintf(stderr, "Can’t open database: %s\n", sqlite3_errmsg(db));
+        return -1;
+    }else{
+        fprintf(stderr, "Opened database successfully\n");
+    }
+    sqlite3_close(db);
 }
 
 //--------------------------------------------------------------
