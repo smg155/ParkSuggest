@@ -16,6 +16,8 @@
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
+		8B263DE8211A7E80005B8E09 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B263DE7211A7E80005B8E09 /* libsqlite3.tbd */; };
+		8B263DEA211A7FB5005B8E09 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B263DE9211A7FB4005B8E09 /* libcurl.tbd */; };
 		8B4DCD35210DE46D002CBC49 /* ApiCaller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DCD33210DE46D002CBC49 /* ApiCaller.cpp */; };
 		8CBA084E0D2FF41F4FABC586 /* ofxGAxisLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6730A1B34047869B473AF /* ofxGAxisLabel.cpp */; };
 		9CF4130A7E6DA19A3DC42B9A /* ofxSmartFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C954E0E8B7DB9D6983309883 /* ofxSmartFont.cpp */; };
@@ -90,6 +92,8 @@
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		896211FFD7650884437CE42C /* ofxSmartFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSmartFont.h; path = ../../../addons/ofxDatGui/src/libs/ofxSmartFont/ofxSmartFont.h; sourceTree = SOURCE_ROOT; };
+		8B263DE7211A7E80005B8E09 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8B263DE9211A7FB4005B8E09 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		8B4DCD33210DE46D002CBC49 /* ApiCaller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ApiCaller.cpp; sourceTree = "<group>"; };
 		8B4DCD34210DE46D002CBC49 /* ApiCaller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ApiCaller.hpp; sourceTree = "<group>"; };
 		8BC6730A1B34047869B473AF /* ofxGAxisLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGAxisLabel.cpp; path = ../../../addons/ofxGrafica/src/ofxGAxisLabel.cpp; sourceTree = SOURCE_ROOT; };
@@ -135,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B263DEA211A7FB5005B8E09 /* libcurl.tbd in Frameworks */,
+				8B263DE8211A7E80005B8E09 /* libsqlite3.tbd in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +221,15 @@
 				3CE288ADBD81B2DA3D900846 /* src */,
 			);
 			name = ofxGrafica;
+			sourceTree = "<group>";
+		};
+		8B263DE6211A7E7F005B8E09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B263DE9211A7FB4005B8E09 /* libcurl.tbd */,
+				8B263DE7211A7E80005B8E09 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		911FE1C75E520EE70A7B4830 /* themes */ = {
@@ -306,6 +321,7 @@
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
 				E4B69B5B0A3A1756003C02F2 /* ParkSuggestDebug.app */,
+				8B263DE6211A7E7F005B8E09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -575,7 +591,6 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				"OTHER_LDFLAGS[arch=*]" = "-sqlite3";
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
 			};
@@ -610,7 +625,6 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				"OTHER_LDFLAGS[arch=*]" = "-sqlite3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 				baseConfigurationReference = E4EB6923138AFD0F00A09F29;

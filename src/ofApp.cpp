@@ -37,18 +37,18 @@ void ofApp::setup(){
     sign_in_should_be_onscreen = true;
     
     // Database setup (SRC: "http://quantlabs.net/blog/2016/01/working-demo-sqlite-with-c-on-mac-osx-xcode/")
-    sqlite3 *db;
+    sqlite3 *databBase;
     char *zErrMsg = 0;
     int request;
-    request = sqlite3_open("LoginDB.db", &db);
+    request = sqlite3_open("LoginDB.db", &databBase);
     
     if(request){
-        fprintf(stderr, "Can’t open database: %s\n", sqlite3_errmsg(db));
-        return -1;
+        fprintf(stderr, "Can’t open database: %s\n", sqlite3_errmsg(databBase));
+        return 0;
     }else{
         fprintf(stderr, "Opened database successfully\n");
     }
-    sqlite3_close(db);
+    sqlite3_close(databBase);
 }
 
 //--------------------------------------------------------------
